@@ -12,9 +12,9 @@ class EventsController extends Controller {
   }
 
   public function index() {
-    $conditions = array();
+    //$conditions = array();
 
-    //example: search on title
+    // example: search on title
     // $conditions[0] = array(
     //   'field' => 'title',
     //   'comparator' => 'like',
@@ -92,8 +92,14 @@ class EventsController extends Controller {
     //   'value' => '2017-05-01 19:00'
     // );
 
-    $events = $this->eventDAO->search($conditions);
+    $events = $this->eventDAO->search();
+    if($this->isAjax) {
+      header('Content-Type: application/json');
+      echo json_encode($events);
+      exit();
+    }
     $this->set('events', $events);
+
   }
 
 }

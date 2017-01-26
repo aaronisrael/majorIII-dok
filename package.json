@@ -2,7 +2,7 @@
   "name": "major3_DOK",
   "version": "0.1.0",
   "scripts": {
-    "development": "mamp ./src & webpack-dev-server",
+    "dev": "mamp ./src & webpack-dev-server",
     "production": "npm run clean && npm run copy && NODE_ENV=production webpack -p",
     "serve": "ws -d ./dist -c -p 3000 ",
     "clean": "rimraf ./dist"

@@ -1,6 +1,12 @@
 const init = () => {
 
-  console.log(`Hello, major3_DOK`);
+  fetch(`index.php`, {
+    headers: new Headers({
+      Accept: `application/json`
+    })
+  })
+    .then(r => r.json())
+    .then(result => console.log(result));
 
 };
 
