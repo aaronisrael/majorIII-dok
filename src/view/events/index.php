@@ -1,17 +1,84 @@
-<section>
-  <h1>Events</h1>
-  <?php foreach($events as $event): ?>
-    <article>
-      <header><h2><?php echo $event['title']; ?></h2></header>
-      <dl>
-        <dt>start</dt><dd><?php echo $event['start'];?></dd>
-        <dt>end</dt><dd><?php echo $event['end'];?></dd>
-        <dt>organiser</dt><dd><?php echo $event['organiser'];?></dd>
-        <dt>title</dt><dd><?php echo $event['title'];?></dd>
-        <dt>locations</dt><dd><ul><?php foreach($event['locations'] as $location): ?><li><?php echo $location['name'];?></li><?php endforeach;?></ul></dd>
-        <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
-        <dt>description</dt><dd><pre><?php echo $event['description'];?></pre></dd>
-      </dl>
+<header>
+  <nav>
+    <svg>
+      <path d="M92.6380134,16.2623256 C93.1362264,15.5545593 93.448131,14.931247 93.9213175,14.4757986 C94.9783402,13.4581743 96.0477604,12.509923 97.3127581,11.6615547 C99.5464905,10.1633082 101.167537,7.74940867 103.045105,5.71868437 C102.957049,5.62007736 102.868876,5.52135435 102.780588,5.42263133 C99.6625857,7.33293908 96.5445831,9.24313081 93.4264645,11.1534386 L93.9084567,11.4780296 C93.4955192,12.2747742 93.1063337,13.0852078 92.662924,13.8647832 C92.2200937,14.6431985 91.5887535,15.3892476 92.6380134,16.2623256 M93.1603261,18.7806325 C97.2776514,25.6500607 101.393007,32.5162406 105.733949,39.7588673 L103.856033,39.7588673 C102.068607,39.7585192 100.630394,39.727777 98.5025604,39.8093308 C96.1899249,39.8094468 94.7609803,39.7658278 93.8157659,39.7537629 C93.2219654,38.8557431 92.5986198,37.8096967 91.4585229,35.5937073 C90.0704782,32.3973321 88.1333563,29.439934 86.3419907,26.2053921 C84.6827095,28.0402945 83.1358159,29.665454 81.7087252,31.3898006 C81.3596285,31.8114905 81.2975256,32.5557994 81.2838537,33.1559101 C81.2353069,35.2789769 81.264968,37.4040159 81.264968,39.6414669 L70.7179135,39.6414669 C70.6895269,39.0220989 70.6417912,38.461083 70.6414436,37.9000672 C70.6361139,27.9124535 70.6670494,17.9247237 70.602861,7.93757404 C70.5932444,6.43863153 70.9691056,5.90128134 72.5210972,5.96462184 C75.3364644,6.07981803 78.1598262,5.99733617 81.1995051,5.99733617 L81.1995051,18.5581287 C82.4533799,16.7035049 83.6712212,16.6513012 85.0540521,17.3182326 C85.2914564,17.4327328 85.7978957,17.3754247 85.9603364,17.196888 C87.3133903,15.7114024 88.9674577,14.3501617 89.8138406,12.6031936 C90.4272219,11.3368476 91.2379188,10.6599395 92.2418761,9.92224307 C95.2492291,7.71263406 98.2186948,5.45140138 101.207394,3.21627055 C101.89991,2.69829374 102.57412,2.14157018 103.320628,1.71454384 C104.248811,1.18369011 105.243151,0.768960642 106.599797,0.115950239 C106.273757,5.21718073 105.981318,9.92734743 105.637666,14.6336859 C105.625153,14.8061901 105.111414,14.9420358 104.613086,15.2140751 C104.861729,11.6398611 105.095194,8.28467071 105.328427,4.92948029 L104.856283,4.72298561 C100.965007,9.40008997 97.0737317,14.0770783 93.1603261,18.7806325"></path>
+      <path d="M58.8892581,27.4237571 C57.9095163,30.5846337 55.6515684,32.3244094 52.4132994,32.4665195 L51.0194615,32.4665195 C47.7813084,32.3244094 45.5232446,30.5846337 44.5436187,27.4237571 C43.7033766,24.7128765 43.6730203,21.9582607 44.3502425,19.2189581 C45.3155013,15.3142366 48.1238009,13.0796858 51.7079224,13.2488259 L51.7079224,13.2491739 C51.710819,13.2490579 51.7134839,13.2490579 51.7163804,13.2489419 C51.719277,13.2490579 51.7220578,13.2490579 51.7248385,13.2491739 L51.7249543,13.2488259 C55.3090759,13.0796858 58.1173754,15.3142366 59.0826342,19.2189581 C59.7598564,21.9582607 59.7295002,24.7128765 58.8892581,27.4237571 M51.9067442,4.79994548 L51.9067442,4.79924943 C51.8430192,4.7987854 51.7799895,4.79971347 51.7164963,4.79971347 C51.6528872,4.79971347 51.5898575,4.7987854 51.5260167,4.79924943 L51.5260167,4.79994548 C40.5467914,4.87256664 33.3731027,11.9294641 33.2833085,22.8040769 C33.1928191,33.7574592 40.160039,40.8152847 51.1299953,40.8829175 L52.3027656,40.8829175 C63.2727219,40.8152847 70.2399418,33.7574592 70.1495683,22.8040769 C70.0596582,11.9294641 62.8859695,4.87256664 51.9067442,4.79994548"></path>
+      <path d="M10.6450171,32.150745 C12.1770802,32.150745 13.6003474,32.1691903 15.0231512,32.1469168 C17.7994724,32.1032977 19.7016035,30.7240756 20.7449543,28.1977641 C22.1224555,24.8624111 22.077848,21.4704461 20.9296408,18.0795251 C20.3527564,16.3758281 19.4157682,14.7735222 17.6082976,14.3887229 C15.3614726,13.9103049 13.0204506,13.8751544 10.6450171,13.6411657 L10.6450171,32.150745 Z M5.79317505e-05,39.6623948 L5.79317505e-05,6.38682225 C0.173505593,6.27742647 0.267355029,6.16605856 0.359814102,6.16733465 C6.69047993,6.24923647 13.0408426,6.05921497 19.3462501,6.50549868 C26.3215805,6.99899775 30.2838805,10.7349272 31.8568434,17.6166522 C32.9207021,22.271599 32.6561857,26.8948755 30.8342321,31.3587567 C28.7535554,36.4558109 24.8303014,39.3249268 19.4618819,39.5880335 C13.0384094,39.9029959 6.58770901,39.6623948 5.79317505e-05,39.6623948 L5.79317505e-05,39.6623948 Z"></path>
+    </svg>
+    <ul>
+      <li>Home</li>
+      <li>Programma</li>
+      <li>Kaart</li>
+      <li>Blog</li>
+      <li>Over Dok</li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="slider">
+    <div class="programSlider"></div>
+  </section>
+  <section class="inleiding">
+    <h1>Dok 2017</h1>
+    <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren iedere zondag én feestdagen van 11u tot 22u. Dit wordt de vaste afspraak. De DOKbewoners openen DOK ook op andere dagen (voor meer info hierover raadpleeg je best de ons programma). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
+  </section>
+  <section class="dokKeuken">
+    <h1>DOK Keuken</h1>
+    <p>Aan eten geen gebrek op DOK. Verschillende DOKbewoners werken aan projecten rond voedsel en zullen ook instaan voor eetstandjes. Of je kookt je eigen potje. </p>
+    <article class="wisselkeuken">
+      <h1>Wisselkeuken</h1>
+      <p>Op regelmatige basis zal een nieuwe kok intrek nemen in de wisselkeuken. Sommigen serveren enkel op zondag, andere gaan voor een week. </p>
+      <button type="button">Meer info</button>
+      <picture>
+        <img src="" alt="">
+      </picture>
     </article>
-  <? endforeach;?>
-</section>
+    <article class="bbq">
+      <h1>bbq</h1>
+      <p>Op DOK staan er 3 grote bbq’s die je op zondag vrij kan gebruiken. Breng wel je eigen houtskool mee! Reserveren is niet mogelijk, maar schuif gerust aan. </p>
+      <picture>
+        <img src="" alt="">
+      </picture>
+    </article>
+    <article class="biohoek">
+      <h1>Eetstandjes &amp; biohoek</h1>
+      <p>Op alle marktdagen  kan je genieten van verschillende eetstandjes. Marktkramers die hun wagen of tent graag opzetten op ons terrein, kunnen de voorwaarden aanvragen via food@dokgent.be.</p>
+      <picture>
+        <img src="" alt="">
+      </picture>
+    </article>
+  </section>
+  <section class="dokSport">
+    <article class="minivoetbal">
+      <h1>Minivoetbal</h1>
+    </article>
+    <article class="basket">
+      <h1>Basket</h1>
+    </article>
+    <article class="tafeltennis">
+      <h1>Tafeltennis</h1>
+    </article>
+    <article class="skaten">
+      <h1>Skaten</h1>
+    </article>
+  </section>
+  <section class="onzePartners">
+    <h1>Onze partners</h1>
+  </section>
+  <section class="nieuwsbrief">
+    <h1>Nieuwsbrief</h1>
+    <form action="">
+      <input type="text" name="naam" value="Naam">
+      <input type="text" name="voorNaam" value="Voornaam">
+      <input type="email" name="email" value="Email">
+      <input type="submit" value="Verzend">
+    </form>
+  </section>
+</main>
+<footer>
+  <p>Splitsing Koopvaardijlaan – Afrikalaan 9000 Gent info@dokgent.be 09 224 19 40</p>
+  <img src="../assets/svg/facebook_logo.svg" alt="">
+  <img src="../assets/svg/twitter_logo.svg" alt="">
+  <img src="../assets/svg/instagram_logo.svg" alt="">
+  <p>DOKvzw Toekomststraat 7 9040 Sint-Amandsberg</p>
+</footer>
