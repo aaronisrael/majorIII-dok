@@ -1,109 +1,37 @@
-<header class="headerHome">
+<header>
     <div class="navContainer">
       <nav class="container">
         <img src="./assets/svg/dok_logo.svg" alt="" class="dokLogoSVG">
         <ul>
-          <li><a href="index.php" class="activePage">Home</a></li>
-          <li><a href="index.php?page=programma">Programma</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php?page=programma" class="activePage">Programma</a></li>
           <li><a href="index.php?page=kaart">Kaart</a></li>
           <li><a href="index.php?page=blog">Blog</a></li>
           <li><a href="index.php?page=overdok">Over Dok</a></li>
         </ul>
       </nav>
     </div>
-    <section class="slider">
-      <ul class="programSlider buttonList">
-        <li class="item program1"><button value="0" type="button" name="eventInfo" class="programButton">Meer info</button></li>
-        <li class="item program2"><button value="1" type="button" name="eventInfo" class="programButton">Meer info</button></li>
-        <li class="item program3"><button value="2" type="button" name="eventInfo" class="programButton">Meer info</button></li>
-        <li class="item program4"><button value="3" type="button" name="eventInfo" class="programButton">Meer info</button></li>
-        <li class="item program5"><button value="4" type="button" name="eventInfo" class="programButton">Meer info</button></li>
-      </ul>
-      <ul class="slider-pagination">
-          <li class="slider-bullet"></li>
-          <li class="slider-bullet"></li>
-          <li class="slider-bullet"></li>
-          <li class="slider-bullet"></li>
-          <li class="slider-bullet"></li>
-      </ul>
-      <img src="./assets/svg/go_left.svg" class="slider-prev">
-      <img src="./assets/svg/go_left.svg" class="slider-next">
-    </section>
-    <div class="popupBox">
-      <div class="popupBox-close">
-        <span class="close">&times;</span>
-        <div class="popupBox-content">
-
-        </div>
-      </div>
-    </div>
 </header>
 <main>
-  <section class="inleiding container">
-    <h1>Dok 2017</h1>
-    <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren iedere zondag én feestdagen van 11u tot 22u. Dit wordt de vaste afspraak. De DOKbewoners openen DOK ook op andere dagen (voor meer info hierover raadpleeg je best de ons programma). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
-  </section>
-  <section class="dokKeuken">
-    <h1 class="subtitle">DOK Keuken</h1>
-    <p>Aan eten geen gebrek op DOK. Verschillende DOKbewoners werken aan projecten rond voedsel en zullen ook instaan voor eetstandjes. Of je kookt je eigen potje. </p>
-    <article class="wisselkeuken dokKeukenItem">
-      <h1>Wisselkeuken</h1>
-      <p>Op regelmatige basis zal een nieuwe kok intrek nemen in de wisselkeuken. Sommigen serveren enkel op zondag, andere gaan voor een week. </p>
-      <button type="button">Meer info</button>
-    </article>
-    <article class="bbq dokKeukenItem">
-      <h1>bbq</h1>
-      <p>Op DOK staan er 3 grote bbq’s die je op zondag vrij kan gebruiken. Breng wel je eigen houtskool mee! Reserveren is niet mogelijk, maar schuif gerust aan. </p>
-    </article>
-    <article class="eetstandje dokKeukenItem">
-      <h1>Eetstandjes &amp; biohoek</h1>
-      <p>Op alle marktdagen  kan je genieten van verschillende eetstandjes. Marktkramers die hun wagen of tent graag opzetten op ons terrein, kunnen de voorwaarden aanvragen via food@dokgent.be.</p>
-    </article>
-  </section>
-  <section class="dokSport">
-    <h1 class="subtitle">DOK Sport</h1>
-    <div class="dokSportFlex">
-      <article class="minivoetbal dokSportItem">
-        <h1>Minivoetbal</h1>
-      </article>
-      <article class="basket dokSportItem">
-        <h1>Basket</h1>
-      </article>
-      <article class="tafeltennis dokSportItem">
-        <h1>Tafeltennis</h1>
-      </article>
-      <article class="skaten dokSportItem">
-        <h1>Skaten</h1>
-      </article>
+  <section class="inleiding programma">
+    <h1>Ons programma</h1>
+    <div class="optionFlex">
+      <p>Sorteer op maand:</p>
+      <select name='' class='filter'>
+        <option value='none'>none</option>
+      </select>
     </div>
   </section>
-  <section class="onzePartners">
-    <h1 class="subtitle">Onze partners</h1>
-    <div class="logoSliderWrap">
-      <ul class="logoSlider">
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/biofresh.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/bionade.jpg" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/cirq.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/democrazy.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/gent.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/overheid.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/pepsi.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/sogent.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/thuis.png" alt=""></a></li>
-        <li class="logoslide"><a href=""><img src="./assets/img/logo/vedett.png" alt=""></a></li>
-      </ul>
-    </div>
+  <section class="programList buttonList">
+
   </section>
-  <div class="nieuwsbrief">
-    <h1 class="subtitle">Nieuwsbrief</h1>
-    <form action="">
-      <div class="formNames">
-        <input type="text" name="naam" value="Naam">
-        <input type="text" name="voorNaam" value="Voornaam">
+  <div class="popupBox">
+    <div class="popupBox-close">
+      <span class="close">&times;</span>
+      <div class="popupBox-content">
+
       </div>
-      <input type="email" name="email" value="Email">
-      <input class="submitNieuwsbrief" type="submit" value="Verzend">
-    </form>
+    </div>
   </div>
 </main>
 <footer>

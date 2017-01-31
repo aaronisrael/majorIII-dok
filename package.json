@@ -4,8 +4,9 @@
   "scripts": {
     "dev": "mamp ./src & webpack-dev-server",
     "production": "npm run clean && npm run copy && NODE_ENV=production webpack -p",
-    "serve": "ws -d ./dist -c -p 3000 ",
-    "clean": "rimraf ./dist"
+    "copy": "copyfiles -u 1 './src/**/*.*' ./dist",
+    "clean": "rimraf dist",
+    "serve": "mamp ./dist"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
@@ -14,6 +15,7 @@
 
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "copyfiles": "^1.0.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "eslint": "^3.7.1",

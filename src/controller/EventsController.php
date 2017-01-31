@@ -102,4 +102,24 @@ class EventsController extends Controller {
 
   }
 
+  public function programma() {
+
+  }
+
+  public function kaart() {
+
+  }
+
+  public function blog() {
+
+  }
+
+  public function overdok() {
+
+  }
+
+  public function details() {
+
+  }
+
 }
